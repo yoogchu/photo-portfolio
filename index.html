@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no"/>
+
+
+	<link href="style.css" type="text/css" rel="StyleSheet">
+
+	<title>photography</title>
+	</head>
+
+	<body>
+	  <div class = "site-wrapper container-fluid">
+
+	  	<div class = "header">
+<script type="text/javascript">
+function changeSize(newValue) {
+	document.getElementById("image-size").innerHTML = newValue;
+
+	var images = document.querySelectorAll(".container-images > img");
+	console.log(images);
+	newValue = newValue+"px";
+
+	for( var i = 0; i < images.length; i++) {
+		console.log("changing " + images[i] + "to " + newValue);
+	    images[i].style.width=newValue;
+	}
+}
+</script>
+	  		<input type="range" min="100" max="500" value="250" step="50" onchange="changeSize(this.value)"/>
+	  		<span id="image-size">250</span>
+
+
+
+	  	</div>
+
+	  	<div class = "container-images">
+<script>
+function clickImage(id) {
+	var clickedImage = id;
+	console.log("Clicked! id: " + id);
+	if (clickedImage.style.width=="100%") {
+		clickedImage.style.width=document.getElementById("image-size").innerHTML+"px";
+		clickedImage.style.margin="5px";
+	} else {
+		clickedImage.style.width="100%";
+		clickedImage.style.margin="0 auto";
+	}
+}
+</script>
+		  	<img src="images/eugene/1.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/2.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/3.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/4.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/5.jpg" onclick="clickImage(this)">
+	  	</div>
+
+
+	  </div>
+
+
+	</body>
+</html>
+
+
+
