@@ -14,7 +14,7 @@
 	<body>
 	  <div class = "site-wrapper container-fluid">
 
-	  	<div class = "header">
+	  	
 <script type="text/javascript">
 function changeSize(newValue) {
 	document.getElementById("image-size").innerHTML = newValue;
@@ -29,33 +29,34 @@ function changeSize(newValue) {
 	}
 }
 </script>
-	  		<input type="range" min="100" max="500" value="250" step="50" onchange="changeSize(this.value)"/>
+		<div class = "header">
+	  		<input type="range" min="150" max="500" value="250" step="50" onchange="changeSize(this.value)"/>
 	  		<span id="image-size">250</span>
-
-
-
 	  	</div>
 
-	  	<div class = "container-images">
+	  	
 <script>
 function clickImage(id) {
 	var clickedImage = id;
 	console.log("Clicked! id: " + id);
-	if (clickedImage.style.width=="100%") {
-		clickedImage.style.position="relative";
-		clickedImage.style.width=document.getElementById("image-size").innerHTML+"px";
-		clickedImage.style.margin="5px";
-	} else {
-		clickedImage.style.zIndex="999 !important";
-		clickedImage.style.width="100%";
-		clickedImage.style.margin="0 auto";
-		clickedImage.style.top="0";
-		clickedImage.style.left="0";
-		clickedImage.style.position="fixed";
+	document.getElementById("image-fs").style.display="block";
+	document.getElementById("fs-image").src = clickedImage.src;
+	window.location.hash="image-fs";
+	document.getElementById("fs-image").style.marginLeft=((window.innerWidth-document.getElementById("fs-image").width)/2)+"px";
 
-	}
+}
+function hideFS() {
+	console.log("Hiding fullscreen image");
+	document.getElementById("image-fs").style.display="none";
+	document.getElementById("fs-mage").style.display="none";
+	document.getElementsByClassName("container-images").style.display="block";
+
 }
 </script>
+		<div id = "image-fs">
+			<img id="fs-image" onclick="hideFS()" src="images/eugene/1.jpg">
+		</div>
+		<div class = "container-images">
 		  	<img src="images/eugene/1.jpg" onclick="clickImage(this)">
 		  	<img src="images/eugene/2.jpg" onclick="clickImage(this)">
 		  	<img src="images/eugene/3.jpg" onclick="clickImage(this)">
