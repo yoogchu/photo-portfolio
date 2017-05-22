@@ -42,11 +42,17 @@ function clickImage(id) {
 	var clickedImage = id;
 	console.log("Clicked! id: " + id);
 	if (clickedImage.style.width=="100%") {
+		clickedImage.style.position="relative";
 		clickedImage.style.width=document.getElementById("image-size").innerHTML+"px";
 		clickedImage.style.margin="5px";
 	} else {
+		clickedImage.style.zIndex="999 !important";
 		clickedImage.style.width="100%";
 		clickedImage.style.margin="0 auto";
+		clickedImage.style.top="0";
+		clickedImage.style.left="0";
+		clickedImage.style.position="fixed";
+
 	}
 }
 </script>
@@ -55,6 +61,19 @@ function clickImage(id) {
 		  	<img src="images/eugene/3.jpg" onclick="clickImage(this)">
 		  	<img src="images/eugene/4.jpg" onclick="clickImage(this)">
 		  	<img src="images/eugene/5.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/6.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/7.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/8.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/9.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/10.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/11.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/12.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/13.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/14.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/15.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/16.jpg" onclick="clickImage(this)">
+		  	<img src="images/eugene/17.jpg" onclick="clickImage(this)">
+
 	  	</div>
 
 
