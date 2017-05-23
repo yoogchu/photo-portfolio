@@ -14,65 +14,12 @@
 	<body>
 	  <div class = "site-wrapper container-fluid">
 
-	  	
-<script type="text/javascript">
-function changeSize(newValue) {
-	document.getElementById("image-size").innerHTML = newValue;
-
-	var images = document.querySelectorAll(".container-images > img");
-	console.log(images);
-	newValue = newValue+"px";
-
-	for( var i = 0; i < images.length; i++) {
-		console.log("changing " + images[i] + "to " + newValue);
-	    images[i].style.width=newValue;
-	}
-}
-</script>
 		<div class = "header">
 	  		<input type="range" min="150" max="500" value="250" step="50" onchange="changeSize(this.value)"/>
-	  		<span id="image-size">250</span>
+	  		<span id="image-size"></span>
 	  	</div>
 
 	  	
-<script>
-var windowLocation = null;
-function clickImage(id) {
-	var clickedImage = id;
-	console.log("Clicked! id: " + id);
-	document.getElementById("image-fs").style.display="block";
-	document.getElementById("fs-image").src = clickedImage.src;
-	document.getElementById("fs-image").style.marginLeft=((window.innerWidth-document.getElementById("fs-image").width)/2)+"px";
-	document.getElementsByClassName("container-images")[0].style.display="hidden";
-	var images = document.querySelectorAll(".container-images > img");
-	for (var i = 0; i < images.length; i++) {
-		images[i].style.opacity="0";
-	}
-	document.getElementsByClassName("container-images")[0].style.backgroundColor="#000";
-
-	document.getElementsByClassName("header")[0].style.display="hidden";
-	document.body.style.backgroundColor="#000";
-	windowLocation = window.screenTop;
-	console.log(windowLocation);
-
-}
-function hideFS() {
-	console.log("Hiding fullscreen image");
-	document.getElementById("image-fs").style.display="none";
-	document.getElementsByClassName("container-images")[0].style.backgroundColor="#f0f0f0";
-	document.getElementsByClassName("container-images")[0].style.display="block";
-		var images = document.querySelectorAll(".container-images > img");
-	for (var i = 0; i < images.length; i++) {
-		images[i].style.opacity=".8";
-	}
-	document.getElementsByClassName("header")[0].style.display="block";
-	document.body.style.backgroundColor="#fff";
-	// if (windowLocation != null) {
-	// 	console.log("Scrolling to.." + windowLocation);
-	// 	window.scrollTo(0,windowLocation);
-	// }
-}
-</script>
 		<div id = "image-fs">
 			<img id="fs-image" onclick="hideFS()" src="images/eugene/1.jpg">
 		</div>
@@ -102,6 +49,7 @@ function hideFS() {
 
 
 	</body>
+	<script src="img_scripts.js" type="text/javascript"></script>
 </html>
 
 
