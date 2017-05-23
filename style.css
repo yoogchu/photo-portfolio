@@ -7,16 +7,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline;
 	background: transparent;
 }
-
 body {
 	font-family: Poppins;
-	background-color: #000000;
+	background-color: #fff;
 }
 .site-wrapper{
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	overflow-x: hidden;
 }
 .container-fluid {
 	padding:0 !important;
@@ -70,7 +68,10 @@ a {
 .container-images img {
 	width: 250px;
 	margin: 3px;
-	overflow: auto;
+	opacity: .8;
+}
+.container-images img:hover {
+	opacity: 1 !important;
 }
 #image-fs {
 	display: none;

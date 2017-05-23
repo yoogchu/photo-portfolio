@@ -36,21 +36,41 @@ function changeSize(newValue) {
 
 	  	
 <script>
+var windowLocation = null;
 function clickImage(id) {
 	var clickedImage = id;
 	console.log("Clicked! id: " + id);
 	document.getElementById("image-fs").style.display="block";
 	document.getElementById("fs-image").src = clickedImage.src;
-	window.location.hash="image-fs";
 	document.getElementById("fs-image").style.marginLeft=((window.innerWidth-document.getElementById("fs-image").width)/2)+"px";
+	document.getElementsByClassName("container-images")[0].style.display="hidden";
+	var images = document.querySelectorAll(".container-images > img");
+	for (var i = 0; i < images.length; i++) {
+		images[i].style.opacity="0";
+	}
+	document.getElementsByClassName("container-images")[0].style.backgroundColor="#000";
+
+	document.getElementsByClassName("header")[0].style.display="hidden";
+	document.body.style.backgroundColor="#000";
+	windowLocation = window.screenTop;
+	console.log(windowLocation);
 
 }
 function hideFS() {
 	console.log("Hiding fullscreen image");
 	document.getElementById("image-fs").style.display="none";
-	document.getElementById("fs-mage").style.display="none";
-	document.getElementsByClassName("container-images").style.display="block";
-
+	document.getElementsByClassName("container-images")[0].style.backgroundColor="#f0f0f0";
+	document.getElementsByClassName("container-images")[0].style.display="block";
+		var images = document.querySelectorAll(".container-images > img");
+	for (var i = 0; i < images.length; i++) {
+		images[i].style.opacity=".8";
+	}
+	document.getElementsByClassName("header")[0].style.display="block";
+	document.body.style.backgroundColor="#fff";
+	// if (windowLocation != null) {
+	// 	console.log("Scrolling to.." + windowLocation);
+	// 	window.scrollTo(0,windowLocation);
+	// }
 }
 </script>
 		<div id = "image-fs">
