@@ -1,4 +1,5 @@
 function changeSize(newValue) {
+	console.log("changeSize");
 	document.getElementById("image-size").innerHTML = newValue;
 
 	var images = document.querySelectorAll(".container-images > img");
@@ -27,7 +28,12 @@ function clickImage(id) {
 	document.body.style.backgroundColor="#000";
 
 	document.getElementById("image-fs").style.display="block";
-	document.getElementById("fs-image").src = clickedImage.src;
+	//images/eugene/1_thumb.jpg
+	var src = clickedImage.src+"";
+	console.log("imagesource:" + src);
+	console.log(src.substring(0, src.indexOf("_thumb")) + src.substring(src.indexOf("_thumb")+6,src.length));
+	var newSrc = src.substring(0, src.indexOf("_thumb")) + src.substring(src.indexOf("_thumb")+6,src.length);
+	document.getElementById("fs-image").src = newSrc;
 	document.getElementById("fs-image").style.marginLeft=((window.innerWidth-document.getElementById("fs-image").width)/2)+"px";
 	document.getElementsByClassName("container-images")[0].style.visibility="hidden";
 	document.getElementsByClassName("header")[0].style.visibility="hidden";
